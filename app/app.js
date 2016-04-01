@@ -4,24 +4,23 @@
 
     angular
     .module('codeimpot', [
-        'ngRoute',
+        'ui.router',
         'ngAnimate',
         'ngMaterial',
 
         'codeimpot.home'
     ])
 
-    .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-        $locationProvider.hashPrefix('!');
+    .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
+        $urlRouterProvider.otherwise("/");
 
         // routes
-        $routeProvider
-        .when("/", {
+        $stateProvider
+        .state('home', {
+            url: "/",
             templateUrl: "components/home/home.view.html",
-            controller: "HomeController as HomeCtrl"
-        })
-        .otherwise({
-            redirectTo: '/'
+            controller: "HomeController",
+            controllerAs: "HomeCtrl"
         });
     }]);
 }());
