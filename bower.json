@@ -1,0 +1,18 @@
+{
+  "name": "codeimpot-2016",
+  "homepage": "https://github.com/blckshrk/codeimpot-2016",
+  "authors": [
+    "Alexandre Bonhomme <alexand.bonhom@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
