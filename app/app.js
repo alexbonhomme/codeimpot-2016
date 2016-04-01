@@ -23,5 +23,8 @@
             controller: "HomeController",
             controllerAs: "HomeCtrl"
         });
-    }]);
+    }])
+
+    .constant('API_BASE', 'http://api.openfisca.fr/api/1')
+    ;
 }());

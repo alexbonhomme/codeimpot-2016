@@ -2,10 +2,14 @@
     'use strict';
 
     angular
-    .module('codeimpot.home', [])
-    .controller('HomeController', [function(){
+    .module('codeimpot.home', [
+        'codeimpot.api'
+    ])
+    .controller('HomeController', ['API', function (API) {
         var vm = this;
 
-        vm.test = 'Hello world !';
+        API.reforms().$promise.then(function (data) {
+            vm.reforms = data;
+        });
     }]);
 }());
