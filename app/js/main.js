@@ -1,35 +1,31 @@
 (function () {
 
-'use strict';
+    'use strict';
 
+    angular.module('SampleApp', [
+        'ngRoute',
+        'ngAnimate',
+        'ngMaterial'
+    ])
 
-  angular.module('SampleApp', ['ngRoute', 'ngAnimate'])
+    .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+        $locationProvider.hashPrefix('!');
 
-  .config([
-    '$locationProvider',
-    '$routeProvider',
-    function($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
-      // routes
-      $routeProvider
+        // routes
+        $routeProvider
         .when("/", {
-          templateUrl: "./partials/partial1.html",
-          controller: "MainController"
+            templateUrl: "./partials/partial1.html",
+            controller: "MainController"
         })
         .otherwise({
-           redirectTo: '/'
+            redirectTo: '/'
         });
-    }
-  ]);
+    }]);
 
-  //Load controller
-  angular.module('SampleApp')
+    //Load controller
+    angular.module('SampleApp')
 
-  .controller('MainController', [
-    '$scope',
-    function($scope) {
-      $scope.test = "Testing...";
-    }
-  ]);
-
+    .controller('MainController', ['$scope', function($scope) {
+        $scope.test = "Testing...";
+    }]);
 }());
