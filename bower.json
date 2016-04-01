@@ -20,6 +20,7 @@
     "jquery": "^2.2.2",
     "angular-material": "^1.0.6",
     "angular-ui-router": "^0.2.18",
-    "angular-resource": "^1.5.3"
+    "angular-resource": "^1.5.3",
+    "d3": "^3.5.16"
   }
 }
