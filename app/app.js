@@ -2,10 +2,13 @@
 
     'use strict';
 
-    angular.module('SampleApp', [
+    angular
+    .module('codeimpot', [
         'ngRoute',
         'ngAnimate',
-        'ngMaterial'
+        'ngMaterial',
+
+        'codeimpot.home'
     ])
 
     .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -14,18 +17,11 @@
         // routes
         $routeProvider
         .when("/", {
-            templateUrl: "./partials/partial1.html",
-            controller: "MainController"
+            templateUrl: "components/home/home.view.html",
+            controller: "HomeController as HomeCtrl"
         })
         .otherwise({
             redirectTo: '/'
         });
-    }]);
-
-    //Load controller
-    angular.module('SampleApp')
-
-    .controller('MainController', ['$scope', function($scope) {
-        $scope.test = "Testing...";
     }]);
 }());
