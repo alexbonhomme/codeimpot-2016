@@ -8,8 +8,10 @@
     .controller('HomeController', ['API', function (API) {
         var vm = this;
 
-        API.reforms().$promise.then(function (data) {
-            vm.reforms = data;
+        API.simulate({
+            // TODO
+        }).$promise.then(function (data) {
+            vm.results = data;
         });
     }]);
 }());

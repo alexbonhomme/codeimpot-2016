@@ -48,7 +48,7 @@
              * @see: http://doc.openfisca.fr/openfisca-web-api/endpoints.html#simulate
              */
             simulate: {
-                method: 'GET',
+                method: 'POST',
                 url: API_BASE + '/simulate'
             },
 
