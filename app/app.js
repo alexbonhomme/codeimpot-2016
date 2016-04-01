@@ -6,6 +6,7 @@
     .module('codeimpot', [
         'ui.router',
         'ngAnimate',
+        'ngResource',
         'ngMaterial',
 
         'codeimpot.home'
