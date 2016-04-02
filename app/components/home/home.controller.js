@@ -57,10 +57,10 @@
 				}
 
 				switch (vm.userData.enfants) {
-					case '1':
+					case 1:
 						scenar.foyers_fiscaux[0].f7ga = vm.userData.gardeEnfants;
 						break;
-					case '2':
+					case 2:
 						scenar.foyers_fiscaux[0].f7ga = Math.round(vm.userData.gardeEnfants / 2);
 						scenar.foyers_fiscaux[0].f7gb = Math.round(vm.userData.gardeEnfants / 2);
 						break;

@@ -20,7 +20,7 @@
 
             <md-input-container class="md-block" flex="30">
                 <label>Nombre d'enfant(s) à charge</label>
-                <input name="enfants" ng-model="HomeCtrl.userData.enfants" required ng-pattern="/^[0-9]*$/">
+                <input type="number" name="enfants" ng-model="HomeCtrl.userData.enfants" required ng-pattern="/^[0-9]*$/">
             </md-input-container>
         </div>
     </md-content>
