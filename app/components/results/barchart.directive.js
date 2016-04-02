@@ -219,7 +219,7 @@ Types.select('rect')
               "Situation": "Frais de garde des enfants de moins de 6 ans au 1\/1\/2015 7GA",
               "Montant net": 3571,
               "Impots": 1150,
-              "Type_impact": "cr\u00e9dit d'imp\u00f4t",
+              "Type_impact": "frais de garde d'enfants",
               "nom": "garde enfants",
               "typologie": "deduction"
             }, {
