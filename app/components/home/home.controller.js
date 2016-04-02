@@ -2,9 +2,7 @@
 	'use strict';
 
 	angular
-		.module('codeimpot.home', [
-			'codeimpot.api'
-		])
+		.module('codeimpot.home')
 		.controller('HomeController', ['API', function(API) {
 			var vm = this;
 

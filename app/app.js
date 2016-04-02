@@ -10,7 +10,8 @@
         'ngResource',
         'ngMaterial',
 
-        'codeimpot.home'
+        'codeimpot.home',
+        'codeimpot.results'
     ])
 
     .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {

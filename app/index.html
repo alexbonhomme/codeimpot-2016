@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <md-content class="main-container">
+    <div class="main-container">
         <md-toolbar class="md-hue-2">
             <h2 class="md-toolbar-tools">
                 #CodeImpot 2016
@@ -25,7 +25,7 @@
 
         <!-- views -->
         <div ui-view class="anim-in-out main-view" data-anim-sync="true"></div>
-    </md-content>
+    </div>
 
     <!-- bower -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -35,13 +35,18 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
-    <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/angular-ui-router-anim-in-out/anim-in-out.js"></script>
 
     <!-- custom -->
     <script src="components/api/api.service.js"></script>
+    <script src="shared/d3/d3.factory.js"></script>
 
+    <script src="components/home/home.module.js"></script>
     <script src="components/home/home.controller.js"></script>
+
+    <script src="components/results/results.module.js"></script>
+    <script src="components/results/barchart.directive.js"></script>
+    <script src="components/results/curvechart.directive.js"></script>
 
     <script src="app.js"></script>
 
