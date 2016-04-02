@@ -1,0 +1,137 @@
+<style type="text/css">
+
+    div.tooltip {
+      position: absolute;
+      text-align: center;
+      width: 100px;
+      height: 60px;
+      padding: 2px;
+      font: 12px sans-serif;
+      background: #fff;
+      border: 2px solid #333;
+      border-radius: 8px;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    div.tooltip p{
+      /*display: inline-block;*/
+      background-color: null;
+      margin: 0;
+      padding: 0;
+    }
+
+    div.tooltip li{
+      list-style-type: none;
+      text-align: left;
+
+    }
+
+
+    #slider .axis {
+      font: 10px sans-serif;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    #slider .axis .domain {
+      fill: none;
+      stroke: #000;
+      stroke-opacity: .3;
+      stroke-width: 10px;
+      stroke-linecap: round;
+    }
+
+    #slider .axis .halo {
+      fill: none;
+      stroke: #ddd;
+      stroke-width: 8px;
+      stroke-linecap: round;
+    }
+
+    .slider .handle {
+      fill: #fff;
+      stroke: #000;
+      stroke-opacity: .5;
+      stroke-width: 1.25px;
+      cursor: crosshair;
+    }
+
+    #blocks{
+    width: 800px;
+    display: table;
+    }
+
+    #block1, #block2{
+    display: table-cell;
+      width: 400px;
+      background-color: #f5f5f5;
+
+    }
+
+    #block1{
+    border: 2px solid #fff;
+    }
+
+    .innerblock{
+
+    }
+
+    #innerblock1{
+    border-bottom: 2px solid #fff;
+    }
+
+    .block p, .block div{
+
+
+    }
+
+
+    #vis .axis path,
+    #vis .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+
+    #vis .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+    }
+
+</style>
+<div>
+    <div id="slider"></div>
+    <div id="revenu_imposable"></div>
+    <div class="block" id="blocks">
+      <div class="block" id="block1">
+        <p>Montant de l'impot sur le revenu net</p>
+        <div class="taxes_before"></div>
+        <div class="arrow_between"></div>
+        <div class="taxes_after"></div>
+        <div id ="bymonth">
+          <div class="taxes_before"></div>
+          <div class="arrow_between"></div>
+          <div class="taxes_after"></div>
+        </div>
+      </div>
+      <div class="block" id="block2">
+        <div id="innerblock1" class="innerblock block">
+          <p>Taux d'imposition moyen</p>
+          <div class="taxes_before"></div>
+          <div class="arrow_between"></div>
+          <div class="taxes_after"></div>
+        </div>
+        <div id="innerblock2" class="innerblock block">
+          <p>Tranche</p>
+          <div class="taxes_before"></div>
+          <div class="arrow_between"></div>
+          <div class="taxes_after"></div>
+        </div>
+      </div>
+    </div>
+    <div id="vis"></div>
+</div>
