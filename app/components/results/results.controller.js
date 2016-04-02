@@ -7,7 +7,7 @@
         var data = ResultsService.get();
 
         if (data) {
-            vm.impo = data[0].menages[0].impo["2014"];
+            vm.impo = Math.abs(data[0].irpp["2015"][0]);
         }
     }]);
 }());
