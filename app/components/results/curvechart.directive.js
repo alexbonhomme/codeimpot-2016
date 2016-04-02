@@ -206,7 +206,7 @@
 
     angular
         .module('codeimpot.results')
-        .directive('curveChart', ['d3Service', function (d3Service) {
+        .directive('curveChart', ['d3Service', 'ResultsService', function (d3Service, ResultsService) {
             return {
                 restrict: 'EA',
                 scope: {},
@@ -217,6 +217,7 @@
                           {"impot":2421, "taux":3.36, "tranche":3, "taux_marginal":"30%"},
                           {"impot":2632, "taux":3.66, "tranche":4, "taux_marginal":"41%"}
                           ];
+                          var data_results = ResultsService.get();
 
                         var x_depart = 40500;
 
