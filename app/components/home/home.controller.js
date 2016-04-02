@@ -3,7 +3,7 @@
 
 	angular
 		.module('codeimpot.home')
-		.controller('HomeController', ['API', function(API) {
+		.controller('HomeController', ['API', '$state', function(API, $state) {
 			var vm = this;
 
 			vm.userData = {
@@ -19,15 +19,11 @@
 					"test_case": {
 						"individus": [{
 							"id": "Personne Principale",
-							"salaire_de_base": {
-								"2014": 50000
-							},
+							"salaire_imposable": 0,
 							"statmarit": vm.userData.statmarit
 						}, {
 							"id": "Personne Conjoint",
-							"salaire_de_base": {
-								"2014": 35000
-							}
+							"salaire_imposable": vm.userData.salaire2
 						}],
 						"familles": [{
 							"id": "Famille 1",
@@ -53,8 +49,12 @@
 				var scenar = vm.scenario.scenarios[0].test_case,
 					id_enfant;
 
+				// MAJ des salaires
+				scenar.individus[0].salaire_imposable = vm.userData.salaire1 || 0;
+				scenar.individus[1].salaire_imposable = vm.userData.salaire2 || 0;
+
 				//Génère le nombre d'enfants
-				for (var i = 0; i < 2; i++) {
+				for (var i = 0; i < vm.userData.enfants || 0; i++) {
 					id_enfant = i.toString();
 
 					scenar.individus.push({
@@ -73,9 +73,18 @@
 				return JSON.stringify(vm.scenario);
 			}
 
+			vm.callAPI = function() {
+				API.simulate(vm.getScenario()).$promise.then(function(data) {
+					vm.results = data;
+					//$state.go('results');
+					console.log(vm.scenario.scenarios[0].test_case);
+				});
+			};
+
 			API.simulate(vm.getScenario()).$promise.then(function(data) {
 				vm.results = data;
-				console.log(vm.scenario);
+				console.log(vm.scenario.scenarios[0].test_case);
 			});
+
 		}]);
 }());
