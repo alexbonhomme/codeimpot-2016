@@ -16,6 +16,8 @@
 						"start": 2014,
 						"unit": "year"
 					},
+
+					"axes": [],
 					"test_case": {
 						"individus": [{
 							"id": "Personne Principale",
@@ -43,7 +45,7 @@
 						}]
 					}
 				}],
-				"variables": ["revdisp"]
+				'variables': ['impo']
 			};
 
 			vm.calculRepartitionChargeEnfant = function() {
@@ -83,7 +85,7 @@
 				scenar.foyers_fiscaux[0].f7wj = vm.userData.depensesEquipements || 0; //Dépenses d'équipements pour les personnes handicapées
 				vm.calculRepartitionChargeEnfant();
 
-				//Génère le nombre d'enfants
+				// Génère le nombre d'enfants
 				for (var i = 0; i < vm.userData.enfants || 0; i++) {
 					id_enfant = i.toString();
 
@@ -98,9 +100,21 @@
 				return vm.scenario;
 			};
 
-			vm.getScenario = function() {
-				vm.generateScenario();
-				return JSON.stringify(vm.scenario);
+			vm.generateScenarioSimulate = function() {
+				var scenarioSimulate = vm.generateScenario();
+
+				scenarioSimulate.scenarios[0].axes.push({
+					"count": 200,
+					"max": 10000,
+					"min": 0,
+					"name": "salaire_imposable"
+				});
+
+				return scenarioSimulate;
+			};
+
+			vm.getScenario = function() {;
+				return JSON.stringify(vm.generateScenarioCalcule());
 			}
 
 			vm.callAPI = function() {
@@ -111,10 +125,11 @@
 				});
 			};
 
-			API.calculate(vm.getScenario()).$promise.then(function(data) {
-				vm.results = data;
-				console.log(vm.scenario.scenarios[0].test_case);
-			});
+			vm.callAPISimulate = function() {
+				API.calculate(vm.generateScenarioSimulate()).$promise.then(function(data) {
+					vm.results = data;
+				});
+			};
 
 		}]);
 }());
