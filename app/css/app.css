@@ -36,6 +36,14 @@ md-grid-list md-grid-tile md-grid-tile-header h3 {
     color: #c5cae9;
 }
 
+#vis,
+#slider {
+    text-align: center;
+}
+
+#blocks {
+    margin: auto;
+}
 /* animation in */
 .anim-in-out.anim-in-setup.anim-slide-bottom,
 .anim-in-out.anim-in-setup .anim-slide-bottom {
