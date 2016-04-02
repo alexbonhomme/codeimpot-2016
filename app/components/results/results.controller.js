@@ -7,7 +7,9 @@
         var data = ResultsService.get();
 
         if (data) {
-            vm.impo = Math.abs(data[0].irpp["2015"][0]);
+            var len = data[0].irpp["2015"].length;
+
+            vm.impo = Math.abs(data[0].irpp["2015"][len / 2]);
         }
     }]);
 }());
