@@ -51,7 +51,7 @@
       d.name = d.nom;
       d.value = +d.Impots;
       d.value0 = x0;
-      x0 = x0 + d.value; 
+      x0 = x0 + d.value;
 
 
     });
@@ -155,7 +155,7 @@ Types.select('rect')
   var this_top_val = margin.top + i*43 + 50;
   var this_title = ""
   if (d.title){this_title  = d.title};
-   
+
   div_tooltip.html('<p><b>' + this_title + '</b> <br />' + d.Type_impact + '</p>' + '<p>' + d.value + ' euros </p> ').style('left', this_left_val + 'px').style('top', this_top_val  + 'px').style('height', 50 + 'px').style('opacity', 0.9);
 })
 .on('mouseout', function(d) {
@@ -178,55 +178,54 @@ Types.select('rect')
             var data_results = ResultsService.get();
             var data = [{
               "Situation": "Situation de r\u00e9f\u00e9rence",
-              "Montant net": 19255,
+              "Montant net": 19254,
               "Impots": 6544,
               "Type_impact": "couple marié",
               "nom": "Mariage",
               "typologie": "deduction",
-    "title":"Impacts liés au foyer fiscal"
+              "title":"Impacts liés au foyer fiscal"
             }, {
               "Situation": "Enfants",
-              "Montant net": 12711,
-              "Impots": 3020,
+              "Montant net": 12710,
+              "Impots": 3015,
               "Type_impact": "deux enfants à charge",
               "nom": "enfants",
               "typologie": "deduction"
             }, {
               "Situation": "D\u00e9duction des frais professionnels",
-              "Montant net": 9691,
+              "Montant net": 9695,
               "Impots": 2400,
               "Type_impact": "d\u00e9duction des frais professionnels",
               "nom": "Frais pro",
               "typologie": "deduction",
-    "title":"Impacts liés aux abattements"
+              "title":"Impacts liés aux abattements"
             }, {
               "Situation": "Aux oeuvres reconnues d'utilit\u00e9 publique ou fiscalement assimil\u00e9es en mati\u00e8re de dons, aux oeuvres d'int\u00e9r\u00eat g\u00e9n\u00e9ral 7UF",
-              "Montant net": 7291,
+              "Montant net": 7295,
               "Impots": 1320,
               "Type_impact": "dons aux œuvres",
               "nom": "Dons",
               "typologie": "deduction",
-    "title":"Impacts liés aux"
+              "title":"Impacts liés aux"
             }, {
               "Situation": "Mat\u00e9riaux d\u2019isolation thermique des parois vitr\u00e9es (fen\u00eatres, portes-fen\u00eatres\u2026)  7AM",
-              "Montant net": 5971,
-              "Impots": 2400,
+              "Montant net": 5975,
+              "Impots": 2000,
               "Type_impact": "dépenses d'équipements pour les PH",
               "nom": "Isolation",
               "typologie": "deduction",
     "title":"réductions et crédits d’impôts"
             }, {
               "Situation": "Frais de garde des enfants de moins de 6 ans au 1\/1\/2015 7GA",
-              "Montant net": 3571,
-              "Impots": 1150,
+              "Montant net": 3975,
+              "Impots": 2300,
               "Type_impact": "frais de garde d'enfants",
               "nom": "garde enfants",
               "typologie": "deduction"
             }, {
               "Situation": "Situation r\u00e9elle",
-              "Montant net": 2421,
-              "Impots": 2421,
-              "Type_impact": "frais de garde d’enfant",
+              "Montant net": 1675,
+              "Impots": 1675,
               "nom": "A payer",
               "typologie": "reel",
     "title":"Situation réelle",
