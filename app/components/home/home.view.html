@@ -10,7 +10,7 @@
         </md-toolbar>
 
         <div layout-padding>
-            <md-radio-group ng-model="HomeCtrl.userData.statmarit" required>
+            <md-radio-group ng-model="HomeCtrl.userData.statmarit" flex="50" required>
                 <md-radio-button value="2">Célibataire</md-radio-button>
                 <md-radio-button value="1">Marié(e)</md-radio-button>
                 <md-radio-button value="5">Pacsé(e)</md-radio-button>
@@ -18,7 +18,7 @@
                 <md-radio-button value="4">Veuf ou veuve</md-radio-button>
             </md-radio-group>
 
-            <md-input-container class="md-block" flex="30">
+            <md-input-container class="md-block" flex="50">
                 <label>Nombre d'enfant(s) à charge</label>
                 <input type="number" name="enfants" ng-model="HomeCtrl.userData.enfants" required ng-pattern="/^[0-9]*$/">
             </md-input-container>
@@ -34,17 +34,16 @@
             </div>
         </md-toolbar>
 
- 		<div layout-padding>
- 			<md-input-container class="md-block" flex="30">
+ 		<div layout-padding layout="row">
+ 			<md-input-container flex="50">
                 <label>Traitement et salaires du déclarant 1</label>
                 <input type="number" ng-model="HomeCtrl.userData.salaire1" required ng-pattern="/^[0-9]*$/">
             </md-input-container>
-            <md-input-container class="md-block" flex="30">
+            <md-input-container flex="50">
                 <label>Traitement et salaires du déclarant 2</label>
                 <input type="number" ng-model="HomeCtrl.userData.salaire2" required ng-pattern="/^[0-9]*$/">
             </md-input-container>
  		</div>
-
     </md-content>
 
     <md-content flex>
@@ -56,20 +55,20 @@
             </div>
         </md-toolbar>
 
-         	<div layout-padding>
-	 			<md-input-container class="md-block" flex="30">
-	                <label>Dons aux oeuvres</label>
-	                <input type="number" ng-model="HomeCtrl.userData.donsOeuvres" required ng-pattern="/^[0-9]*$/">
-	            </md-input-container>
-	            <md-input-container class="md-block" flex="30">
-	                <label>Dépenses d'équipements pour les personnes handicapées</label>
-	                <input type="number" ng-model="HomeCtrl.userData.depensesEquipements" required ng-pattern="/^[0-9]*$/">
-	            </md-input-container>
-	            <md-input-container class="md-block" flex="30">
-	                <label>Frais de garde des jeunes enfants</label>
-	                <input type="number" ng-model="HomeCtrl.userData.gardeEnfants" required ng-pattern="/^[0-9]*$/">
-	            </md-input-container>
-            </div>
+     	<div layout-padding flex="50">
+ 			<md-input-container class="md-block">
+                <label>Dons aux oeuvres</label>
+                <input type="number" ng-model="HomeCtrl.userData.donsOeuvres" required ng-pattern="/^[0-9]*$/">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Dépenses d'équipements pour les personnes handicapées</label>
+                <input type="number" ng-model="HomeCtrl.userData.depensesEquipements" required ng-pattern="/^[0-9]*$/">
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Frais de garde des jeunes enfants</label>
+                <input type="number" ng-model="HomeCtrl.userData.gardeEnfants" required ng-pattern="/^[0-9]*$/">
+            </md-input-container>
+        </div>
 
 	</md-content>
 
