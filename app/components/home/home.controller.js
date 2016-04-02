@@ -95,6 +95,10 @@
 				scenar.individus[0].salaire_imposable = vm.userData.salaire1 || 0;
 				scenar.individus[1].salaire_imposable = vm.userData.salaire2 || 0;
 
+				vm.scenario.scenarios[0].axes[0].min = Math.round(vm.userData.salaire1 * 0.75) || 0;
+				vm.scenario.scenarios[0].axes[0].max = Math.round(vm.userData.salaire1 * 1.25) || 10000;
+
+
 				// MAJ Charges
 				scenar.foyers_fiscaux[0].f7uf = vm.userData.donsOeuvres || 0; //dons oeuvres
 				scenar.foyers_fiscaux[0].f7wj = vm.userData.depensesEquipements || 0; //Dépenses d'équipements pour les personnes handicapées
