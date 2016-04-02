@@ -214,7 +214,7 @@ Types.select('rect')
               "Type_impact": "dépenses d'équipements pour les PH",
               "nom": "Isolation",
               "typologie": "deduction",
-    "title":"réductions et crédits d’impôts"
+              "title":"réductions et crédits d’impôts"
             }, {
               "Situation": "Frais de garde des enfants de moins de 6 ans au 1\/1\/2015 7GA",
               "Montant net": 3975,
@@ -228,8 +228,8 @@ Types.select('rect')
               "Impots": 1675,
               "nom": "A payer",
               "typologie": "reel",
-    "title":"Situation réelle",
-    "percentage":"3,0%"
+              "title":"Situation réelle",
+              "percentage":"3,0%"
             }];
 
             chart(d3, element, data);
