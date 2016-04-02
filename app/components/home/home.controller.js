@@ -6,6 +6,8 @@
 		.controller('HomeController', ['API', '$state', function(API, $state) {
 			var vm = this;
 
+			vm.isLoading = false;
+
 			vm.userData = {
 				statmarit: 2
 			};
@@ -101,20 +103,19 @@
 			vm.getScenario = function() {
 				vm.generateScenario();
 				return JSON.stringify(vm.scenario);
-			}
-
-			vm.callAPI = function() {
-				API.calculate(vm.getScenario()).$promise.then(function(data) {
-					vm.results = data;
-					//$state.go('results');
-					console.log(vm.scenario.scenarios[0].test_case);
-				});
 			};
 
-			API.calculate(vm.getScenario()).$promise.then(function(data) {
-				vm.results = data;
-				console.log(vm.scenario.scenarios[0].test_case);
-			});
+			vm.callAPI = function() {
+				vm.isLoading = true;
+
+				API.calculate(vm.getScenario()).$promise.then(function(data) {
+					vm.results = data;
+					$state.go('results');
+					console.log(vm.scenario.scenarios[0].test_case);
+
+					vm.isLoading = false;
+				});
+			};
 
 		}]);
 }());
