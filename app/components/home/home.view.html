@@ -73,9 +73,11 @@
 
 	</md-content>
 
-    <div layout="row" layout-align="center">
-        <md-button class="md-fab md-primary" aria-label="Use Android"  ng-click="HomeCtrl.callAPISimulate()">
+    <div layout="row" layout-align="center" class="margin-bottom-xs">
+        <md-button class="md-fab" aria-label="Use Android" ng-click="HomeCtrl.callAPI()" ng-hide="HomeCtrl.isLoading">
             <md-icon class="material-icons">details</md-icon>
         </md-button>
+
+        <md-progress-circular md-mode="indeterminate" class="md-accent" md-diameter="80" ng-show="HomeCtrl.isLoading"></md-progress-circular>
     </div>
 </div>

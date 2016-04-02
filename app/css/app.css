@@ -1,5 +1,5 @@
 .main-container {
-    height: 100%;
+    /*height: 100%;*/
 }
 .main-view {
     position: absolute;
@@ -8,6 +8,10 @@
 
 .margin-xs {
     margin: 8px;
+}
+
+.margin-bottom-xs {
+    margin-bottom: 8px;
 }
 
 .grid-content {

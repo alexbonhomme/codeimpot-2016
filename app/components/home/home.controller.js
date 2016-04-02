@@ -3,8 +3,10 @@
 
 	angular
 		.module('codeimpot.home')
-		.controller('HomeController', ['API', '$state', function(API, $state) {
+		.controller('HomeController', ['API', '$state', 'ResultsService', function(API, $state, ResultsService) {
 			var vm = this;
+
+			vm.isLoading = false;
 
 			vm.userData = {
 				statmarit: 2
@@ -17,7 +19,12 @@
 						"unit": "year"
 					},
 
-					"axes": [],
+					"axes": [{
+						"count": 50,
+						"max": 10000,
+						"min": 0,
+						"name": "salaire_imposable"
+					}],
 					"test_case": {
 						"individus": [{
 							"id": "Personne Principale",
@@ -100,36 +107,29 @@
 				return vm.scenario;
 			};
 
-			vm.generateScenarioSimulate = function() {
-				var scenarioSimulate = vm.generateScenario();
-
-				scenarioSimulate.scenarios[0].axes.push({
-					"count": 200,
-					"max": 10000,
-					"min": 0,
-					"name": "salaire_imposable"
-				});
-
-				return scenarioSimulate;
-			};
-
 			vm.getScenario = function() {;
-				return JSON.stringify(vm.generateScenarioCalcule());
+				return JSON.stringify(vm.generateScenario());
 			}
 
 			vm.callAPI = function() {
+				vm.isLoading = true;
+
 				API.calculate(vm.getScenario()).$promise.then(function(data) {
-					vm.results = data;
+					ResultsService.set(data.value);
+
 					//$state.go('results');
 					console.log(vm.scenario.scenarios[0].test_case);
+
+					vm.isLoading = false;
 				});
 			};
 
-			vm.callAPISimulate = function() {
-				API.calculate(vm.generateScenarioSimulate()).$promise.then(function(data) {
-					vm.results = data;
-				});
-			};
+			// vm.callAPISimulate = function() {
+			// 	API.calculate(vm.getScenario()).$promise.then(function(data) {
+			// 		vm.results = data;
+			// 		console.log(vm.getScenario());
+			// 	});
+			// };
 
 		}]);
 }());
