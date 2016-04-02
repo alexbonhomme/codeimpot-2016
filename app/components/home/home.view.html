@@ -33,6 +33,44 @@
             </div>
         </md-toolbar>
 
-        <md-button class="md-raised md-primary" ui-sref="results">Résultats</md-button>
+ 		<div layout-padding>
+ 			<md-input-container class="md-block" flex="30">
+                <label>Traitement et salaires du déclarant 1</label>
+                <input type="number" ng-model="HomeCtrl.userData.salaire1" required ng-pattern="/^[0-9]*$/">
+            </md-input-container>
+            <md-input-container class="md-block" flex="30">
+                <label>Traitement et salaires du déclarant 2</label>
+                <input type="number" ng-model="HomeCtrl.userData.salaire2" required ng-pattern="/^[0-9]*$/">
+            </md-input-container>
+ 		</div>
+
     </md-content>
+
+    <md-content flex>
+   		<md-toolbar md-scroll-shrink>
+    		<div class="md-toolbar-tools">
+              <h3>
+                <span>Charges</span>
+              </h3>
+            </div>
+        </md-toolbar>
+
+         	<div layout-padding>
+	 			<md-input-container class="md-block" flex="30">
+	                <label>Dons aux oeuvres</label>
+	                <input type="number" ng-model="HomeCtrl.userData.donsOeuvres" required ng-pattern="/^[0-9]*$/">
+	            </md-input-container>
+	            <md-input-container class="md-block" flex="30">
+	                <label>Dépenses d'équipements pour les personnes handicapées</label>
+	                <input type="number" ng-model="HomeCtrl.userData.depensesEquipements" required ng-pattern="/^[0-9]*$/">
+	            </md-input-container>
+	            <md-input-container class="md-block" flex="30">
+	                <label>Frais de garde des jeunes enfants</label>
+	                <input type="number" ng-model="HomeCtrl.userData.gardeEnfants" required ng-pattern="/^[0-9]*$/">
+	            </md-input-container>
+ 		</div>
+
+        <md-button class="md-raised md-primary" ng-click="HomeCtrl.callAPI()">Résultats</md-button>
+	</md-content>
+
 </div>
