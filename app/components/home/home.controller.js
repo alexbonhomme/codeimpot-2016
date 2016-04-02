@@ -117,7 +117,7 @@
 				API.calculate(vm.getScenario()).$promise.then(function(data) {
 					ResultsService.set(data.value);
 
-					//$state.go('results');
+					$state.go('results');
 					console.log(vm.scenario.scenarios[0].test_case);
 
 					vm.isLoading = false;
