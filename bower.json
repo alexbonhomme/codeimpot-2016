@@ -21,6 +21,7 @@
     "angular-material": "^1.0.6",
     "angular-ui-router": "^0.2.18",
     "angular-resource": "^1.5.3",
-    "d3": "^3.5.16"
+    "d3": "^3.5.16",
+    "angular-ui-router-anim-in-out": "^1.0.2"
   }
 }

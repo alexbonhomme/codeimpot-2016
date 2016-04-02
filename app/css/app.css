@@ -1,0 +1,43 @@
+.main-container {
+    height: 100%;
+}
+.main-view {
+    position: absolute;
+    width: 100%;
+}
+
+/* animation in */
+.anim-in-out.anim-in-setup.anim-slide-bottom,
+.anim-in-out.anim-in-setup .anim-slide-bottom {
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.anim-in-out.anim-in.anim-slide-bottom,
+.anim-in-out.anim-in .anim-slide-bottom {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}
+
+/* animation out */
+.anim-in-out.anim-out-setup.anim-slide-bottom,
+.anim-in-out.anim-out-setup .anim-slide-bottom {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}
+
+.anim-in-out.anim-out.anim-slide-bottom,
+.anim-in-out.anim-out .anim-slide-bottom {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}

@@ -6,6 +6,7 @@
     .module('codeimpot', [
         'ui.router',
         'ngAnimate',
+        'anim-in-out',
         'ngResource',
         'ngMaterial',
 
@@ -22,6 +23,10 @@
             templateUrl: "components/home/home.view.html",
             controller: "HomeController",
             controllerAs: "HomeCtrl"
+        })
+        .state('results', {
+            url: "/results",
+            templateUrl: "components/results/results.view.html"
         });
     }])
 

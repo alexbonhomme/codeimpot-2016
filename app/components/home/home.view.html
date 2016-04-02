@@ -1,34 +1,38 @@
-<md-content flex>
-    <md-toolbar md-scroll-shrink>
-        <div class="md-toolbar-tools">
-          <h3>
-            <span>Foyer fiscal</span>
-          </h3>
+<div class="view-home anim-slide-bottom">
+    <md-content flex>
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+              <h3>
+                <span>Foyer fiscal</span>
+              </h3>
+            </div>
+        </md-toolbar>
+
+        <div layout-padding>
+            <md-radio-group ng-model="HomeCtrl.userData.statmarit" required>
+                <md-radio-button value="2">Célibataire</md-radio-button>
+                <md-radio-button value="1">Marié(e)</md-radio-button>
+                <md-radio-button value="5">Pacsé(e)</md-radio-button>
+                <md-radio-button value="3">Divorcé(e)</md-radio-button>
+                <md-radio-button value="4">Veuf ou veuve</md-radio-button>
+            </md-radio-group>
+
+            <md-input-container class="md-block" flex="30">
+                <label>Nombre d'enfant(s) à charge</label>
+                <input name="enfants" ng-model="HomeCtrl.userData.enfants" required ng-pattern="/^[0-9]*$/">
+            </md-input-container>
         </div>
-    </md-toolbar>
+    </md-content>
 
-    <div layout-padding>
-        <md-radio-group ng-model="HomeCtrl.userData.statmarit" required>
-            <md-radio-button value="2">Célibataire</md-radio-button>
-            <md-radio-button value="1">Marié(e)</md-radio-button>
-            <md-radio-button value="5">Pacsé(e)</md-radio-button>
-            <md-radio-button value="3">Divorcé(e)</md-radio-button>
-            <md-radio-button value="4">Veuf ou veuve</md-radio-button>
-        </md-radio-group>
+    <md-content flex>
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+              <h3>
+                <span>Revenus</span>
+              </h3>
+            </div>
+        </md-toolbar>
 
-        <md-input-container class="md-block" flex="30">
-            <label>Nombre d'enfant(s) à charge</label>
-            <input name="enfants" ng-model="HomeCtrl.userData.enfants" required ng-pattern="/^[0-9]*$/">
-        </md-input-container>
-    </div>
-</md-content>
-
-<md-content flex>
-    <md-toolbar md-scroll-shrink>
-        <div class="md-toolbar-tools">
-          <h3>
-            <span>Revenus</span>
-          </h3>
-        </div>
-    </md-toolbar>
-</md-content>
+        <md-button class="md-raised md-primary" ui-sref="results">Résultats</md-button>
+    </md-content>
+</div>

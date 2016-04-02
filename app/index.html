@@ -9,13 +9,14 @@
 
     <!-- bower -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css">
 
     <!-- styles -->
     <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
 
-    <md-content>
+    <md-content class="main-container">
         <md-toolbar class="md-hue-2">
             <h2 class="md-toolbar-tools">
                 #CodeImpot 2016
@@ -23,7 +24,7 @@
         </md-toolbar>
 
         <!-- views -->
-        <div ui-view></div>
+        <div ui-view class="anim-in-out main-view" data-anim-sync="true"></div>
     </md-content>
 
     <!-- bower -->
@@ -35,6 +36,7 @@
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/angular-ui-router-anim-in-out/anim-in-out.js"></script>
 
     <!-- custom -->
     <script src="components/api/api.service.js"></script>
