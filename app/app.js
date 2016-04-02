@@ -14,6 +14,8 @@
         'codeimpot.results'
     ])
 
+    .constant('API_BASE', 'http://api.openfisca.fr/api/1')
+
     .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider) {
         $urlRouterProvider.otherwise("/");
 
@@ -41,6 +43,12 @@
         });
     }])
 
-    .constant('API_BASE', 'http://api.openfisca.fr/api/1')
-    ;
+    .run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
+
+        $rootScope.goBack = function () {
+            window.history.back();
+        };
+    }]);
 }());
