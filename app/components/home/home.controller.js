@@ -21,9 +21,9 @@
 					},
 
 					"axes": [{
-						"count": 50,
+						"count": 400,
 						"max": 60000,
-						"min": 50000,
+						"min": 0,
 						"name": "salaire_imposable"
 					}],
 					"test_case": {
@@ -95,9 +95,7 @@
 				scenar.individus[0].salaire_imposable = vm.userData.salaire1 || 0;
 				scenar.individus[1].salaire_imposable = vm.userData.salaire2 || 0;
 
-				vm.scenario.scenarios[0].axes[0].min = Math.round(vm.userData.salaire1 * 0.75) || 0;
-				vm.scenario.scenarios[0].axes[0].max = Math.round(vm.userData.salaire1 * 1.25) || 10000;
-
+				vm.scenario.scenarios[0].axes[0].max =vm.userData.salaire1 * 2 || 1;
 
 				// MAJ Charges
 				scenar.foyers_fiscaux[0].f7uf = vm.userData.donsOeuvres || 0; //dons oeuvres
