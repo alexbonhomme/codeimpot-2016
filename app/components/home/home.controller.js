@@ -13,26 +13,28 @@
 			};
 
 			vm.scenario = {
+				"output_format": "variables",
 				"scenarios": [{
 					"period": {
-						"start": 2014,
+						"start": 2015,
 						"unit": "year"
 					},
 
 					"axes": [{
 						"count": 50,
-						"max": 10000,
-						"min": 0,
+						"max": 60000,
+						"min": 50000,
 						"name": "salaire_imposable"
 					}],
 					"test_case": {
 						"individus": [{
 							"id": "Personne Principale",
 							"salaire_imposable": 0,
-							"statmarit": vm.userData.statmarit
+							"statmarit": 2
 						}, {
 							"id": "Personne Conjoint",
-							"salaire_imposable": vm.userData.salaire2
+							"salaire_imposable": 0,
+							"statmarit": 2
 						}],
 						"familles": [{
 							"id": "Famille 1",
@@ -52,7 +54,7 @@
 						}]
 					}
 				}],
-				'variables': ['impo']
+				'variables': ['irpp', 'rni', 'nbptr']
 			};
 
 			vm.calculRepartitionChargeEnfant = function() {
@@ -83,6 +85,12 @@
 				var scenar = vm.scenario.scenarios[0].test_case,
 					id_enfant;
 
+				// MAJ Situation
+				if (vm.userData.statmarit == 1) {
+					scenar.individus[0].statmarit = 1;
+					scenar.individus[1].statmarit = 1;
+				}
+
 				// MAJ Revenus
 				scenar.individus[0].salaire_imposable = vm.userData.salaire1 || 0;
 				scenar.individus[1].salaire_imposable = vm.userData.salaire2 || 0;
@@ -107,9 +115,9 @@
 				return vm.scenario;
 			};
 
-			vm.getScenario = function() {;
+			vm.getScenario = function() {
 				return JSON.stringify(vm.generateScenario());
-			}
+			};
 
 			vm.callAPI = function() {
 				vm.isLoading = true;
@@ -123,13 +131,6 @@
 					vm.isLoading = false;
 				});
 			};
-
-			// vm.callAPISimulate = function() {
-			// 	API.calculate(vm.getScenario()).$promise.then(function(data) {
-			// 		vm.results = data;
-			// 		console.log(vm.getScenario());
-			// 	});
-			// };
 
 		}]);
 }());
