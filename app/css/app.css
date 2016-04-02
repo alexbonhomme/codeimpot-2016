@@ -10,6 +10,10 @@
     margin: 8px;
 }
 
+.margin-bottom-xs {
+    margin-bottom: 8px;
+}
+
 .grid-content {
     text-align: center;
     font-size: 1.8em;
