@@ -9,7 +9,7 @@
              * @see: http://doc.openfisca.fr/openfisca-web-api/endpoints.html#calculate
              */
             calculate: {
-                method: 'POST',
+                method: 'POST'
             },
 
             /**

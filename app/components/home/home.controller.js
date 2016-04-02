@@ -42,16 +42,46 @@
 							"enfants": []
 						}]
 					}
-				}]
+				}],
+				"variables": ["revdisp"]
+			};
+
+			vm.calculRepartitionChargeEnfant = function() {
+				var scenar = vm.scenario.scenarios[0].test_case;
+
+				//Check
+				if (!vm.userData.gardeEnfants || !vm.userData.gardeEnfants) {
+					return;
+				}
+
+				switch (vm.userData.enfants) {
+					case '1':
+						scenar.foyers_fiscaux[0].f7ga = vm.userData.gardeEnfants;
+						break;
+					case '2':
+						scenar.foyers_fiscaux[0].f7ga = Math.round(vm.userData.gardeEnfants / 2);
+						scenar.foyers_fiscaux[0].f7gb = Math.round(vm.userData.gardeEnfants / 2);
+						break;
+					default:
+						scenar.foyers_fiscaux[0].f7ga = Math.round(vm.userData.gardeEnfants / 3);
+						scenar.foyers_fiscaux[0].f7gb = Math.round(vm.userData.gardeEnfants / 3);
+						scenar.foyers_fiscaux[0].f7gc = Math.round(vm.userData.gardeEnfants / 3);
+						break;
+				}
 			};
 
 			vm.generateScenario = function() {
 				var scenar = vm.scenario.scenarios[0].test_case,
 					id_enfant;
 
-				// MAJ des salaires
+				// MAJ Revenus
 				scenar.individus[0].salaire_imposable = vm.userData.salaire1 || 0;
 				scenar.individus[1].salaire_imposable = vm.userData.salaire2 || 0;
+
+				// MAJ Charges
+				scenar.foyers_fiscaux[0].f7uf = vm.userData.donsOeuvres || 0; //dons oeuvres
+				scenar.foyers_fiscaux[0].f7wj = vm.userData.depensesEquipements || 0; //Dépenses d'équipements pour les personnes handicapées
+				vm.calculRepartitionChargeEnfant();
 
 				//Génère le nombre d'enfants
 				for (var i = 0; i < vm.userData.enfants || 0; i++) {
@@ -74,14 +104,14 @@
 			}
 
 			vm.callAPI = function() {
-				API.simulate(vm.getScenario()).$promise.then(function(data) {
+				API.calculate(vm.getScenario()).$promise.then(function(data) {
 					vm.results = data;
 					//$state.go('results');
 					console.log(vm.scenario.scenarios[0].test_case);
 				});
 			};
 
-			API.simulate(vm.getScenario()).$promise.then(function(data) {
+			API.calculate(vm.getScenario()).$promise.then(function(data) {
 				vm.results = data;
 				console.log(vm.scenario.scenarios[0].test_case);
 			});
