@@ -27,7 +27,9 @@
         })
         .state('results', {
             url: "/results",
-            templateUrl: "components/results/results.view.html"
+            templateUrl: "components/results/results.view.html",
+            controller: "ResultsController",
+            controllerAs: "ResultsCtrl"
         })
         .state('analyses1', {
             url: "/analyses1",

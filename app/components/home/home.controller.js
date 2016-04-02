@@ -3,7 +3,7 @@
 
 	angular
 		.module('codeimpot.home')
-		.controller('HomeController', ['API', '$state', function(API, $state) {
+		.controller('HomeController', ['API', '$state', 'ResultsService', function (API, $state, ResultsService) {
 			var vm = this;
 
 			vm.isLoading = false;
@@ -108,8 +108,9 @@
 			vm.callAPI = function() {
 				vm.isLoading = true;
 
-				API.calculate(vm.getScenario()).$promise.then(function(data) {
-					vm.results = data;
+				API.calculate(vm.getScenario()).$promise.then(function (data) {
+					ResultsService.set(data.value);
+
 					$state.go('results');
 					console.log(vm.scenario.scenarios[0].test_case);
 
