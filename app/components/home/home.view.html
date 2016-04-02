@@ -1,4 +1,4 @@
-<div class="view-home anim-slide-bottom">
+<div class="view-home anim-slide-bottom" ng-cloak>
     <md-content flex>
         <md-toolbar md-scroll-shrink>
             <div class="md-toolbar-tools">
@@ -32,7 +32,11 @@
               </h3>
             </div>
         </md-toolbar>
-
-        <md-button class="md-raised md-primary" ui-sref="results">Résultats</md-button>
     </md-content>
+
+    <div layout="row" layout-align="center">
+        <md-button class="md-fab md-primary" aria-label="Use Android" ui-sref="results">
+            <md-icon class="material-icons">details</md-icon>
+        </md-button>
+    </div>
 </div>
