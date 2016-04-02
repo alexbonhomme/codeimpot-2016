@@ -28,6 +28,14 @@
         .state('results', {
             url: "/results",
             templateUrl: "components/results/results.view.html"
+        })
+        .state('analyses1', {
+            url: "/analyses1",
+            templateUrl: "components/analyses/analyses1.view.html"
+        })
+        .state('analyses2', {
+            url: "/analyses2",
+            templateUrl: "components/analyses/analyses2.view.html"
         });
     }])
 

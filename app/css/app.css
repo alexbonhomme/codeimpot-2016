@@ -6,6 +6,32 @@
     width: 100%;
 }
 
+.margin-xs {
+    margin: 8px;
+}
+
+.grid-content {
+    text-align: center;
+    font-size: 1.8em;
+    color: #3F51B5;
+}
+
+.grid-content small {
+    font-size: 0.7em;
+}
+
+md-grid-list md-grid-tile md-grid-tile-header h3 {
+    font-size: 1em;
+}
+
+.text-big {
+    font-size: 3.5rem;
+}
+
+.text-light-blue {
+    color: #c5cae9;
+}
+
 /* animation in */
 .anim-in-out.anim-in-setup.anim-slide-bottom,
 .anim-in-out.anim-in-setup .anim-slide-bottom {

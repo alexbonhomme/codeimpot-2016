@@ -1,7 +1,53 @@
-<div class="view-results anim-slide-bottom">
-    <md-button class="md-raised md-primary" ui-sref="home">Home</md-button>
+<div class="view-results anim-slide-bottom" ng-cloak flex>
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">
+          <h3>
+            <span>Résultat</span>
+          </h3>
+        </div>
+    </md-toolbar>
 
-    <bar-chart></bar-chart>
+    <md-grid-list
+        md-cols-xs="1"
+        md-cols-sm="2"
+        md-cols-md="2"
+        md-row-height="2:1"
+        md-gutter="16px"
+        class="margin-xs"
+    >
+        <md-grid-tile class="md-whiteframe-1dp" md-rowspan="2">
+            <md-grid-tile-header>
+                <h3>Montant d’impôt sur le revenu net</h3>
+            </md-grid-tile-header>
+            <div class="grid-content">
+                <div class="md-display-3">2345€</div>
+                <small>soit<br> 200€/mois</small>
+            </div>
+        </md-grid-tile>
 
-    <curve-chart></curve-chart>
+        <md-grid-tile class="md-whiteframe-1dp">
+            <md-grid-tile-header>
+                <h3>Taux d’imposition moyen</h3>
+            </md-grid-tile-header>
+            <div class="grid-content">
+                <strong>3,6%</strong>
+            </div>
+        </md-grid-tile>
+
+        <md-grid-tile class="md-whiteframe-1dp">
+            <md-grid-tile-header>
+                <h3>Tranche</h3>
+            </md-grid-tile-header>
+            <div class="grid-content">
+                <div>3</div>
+                <small class="text-light-blue">soit taux marginal d’imposition de 30%</small>
+            </div>
+        </md-grid-tile>
+    </md-grid-list>
+
+    <div layout="row" layout-align="center">
+        <md-button class="md-fab md-primary" aria-label="Use Android" ui-sref="analyses1">
+            <md-icon class="material-icons">details</md-icon>
+        </md-button>
+    </div>
 </div>
