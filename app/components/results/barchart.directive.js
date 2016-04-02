@@ -81,7 +81,8 @@ RefType
 .append('text')
 .attr("class", "name_text")
 .attr("y", 25)
-.text("Situation de référence");
+.text("Situation de référence")
+.style("font-weight", "bold");
 
 
 RefType
@@ -194,7 +195,7 @@ Types.select('rect')
               "Situation": "D\u00e9duction des frais professionnels",
               "Montant net": 9691,
               "Impots": 2400,
-              "Type_impact": "D\u00e9duction des frais professionnels",
+              "Type_impact": "d\u00e9duction des frais professionnels",
               "nom": "Frais pro",
               "typologie": "deduction",
     "title":"Impacts liés aux abattements"
@@ -210,7 +211,7 @@ Types.select('rect')
               "Situation": "Mat\u00e9riaux d\u2019isolation thermique des parois vitr\u00e9es (fen\u00eatres, portes-fen\u00eatres\u2026)  7AM",
               "Montant net": 5971,
               "Impots": 2400,
-              "Type_impact": "dépenses d'équipements pour les personnes handicapées",
+              "Type_impact": "dépenses d'équipements pour les PH",
               "nom": "Isolation",
               "typologie": "deduction",
     "title":"réductions et crédits d’impôts"
@@ -218,8 +219,8 @@ Types.select('rect')
               "Situation": "Frais de garde des enfants de moins de 6 ans au 1\/1\/2015 7GA",
               "Montant net": 3571,
               "Impots": 1150,
-              "Type_impact": "Cr\u00e9dit d'imp\u00f4t",
-              "nom": "Garde enfants",
+              "Type_impact": "frais de garde d'enfants",
+              "nom": "garde enfants",
               "typologie": "deduction"
             }, {
               "Situation": "Situation r\u00e9elle",
