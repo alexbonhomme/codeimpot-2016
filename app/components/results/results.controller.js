@@ -11,7 +11,7 @@
             var res1 = Math.abs(data[0].irpp["2015"][len / 2 - 1]);
             var res2 = Math.abs(data[0].irpp["2015"][len / 2]);
 
-            vm.impo = (res1 + res2) / 2 - 1;
+            vm.impo = (res1 + res2) / 2;
         }
     }]);
 }());
