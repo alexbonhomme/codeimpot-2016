@@ -1,175 +1,206 @@
-<style type="text/css">
-
-  div.tooltip {
-    position: absolute;
-    text-align: center;
-    width: 100px;
-    height: 60px;
-    padding: 2px;
-    font: 12px sans-serif;
-    background: #fff;
-    border: 2px solid #333;
-    border-radius: 8px;
-    pointer-events: none;
-    opacity: 0.8;
-  }
-
-  div.tooltip p{
-    /*display: inline-block;*/
-    background-color: null;
-    margin: 0;
-    padding: 0;
-  }
-
-  div.tooltip li{
-    list-style-type: none;
-    text-align: left;
-
-  }
+  <style type="text/css">
+    body{
+      font-family: tahoma;
+    }
 
 
-  #slider .axis {
-    font: 10px sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
+    div.tooltip {   
+      position: absolute;
+      text-align: center;
+      width: 100px;
+      height: 60px;
+      padding: 2px;
+      font: 12px sans-serif;
+      background: #fff;
+      border: 2px solid #333;
+      border-radius: 8px;
+      pointer-events: none;
+      opacity: 0.8;     
+    }
 
-  #slider .axis .domain {
-    fill: none;
-    stroke: #000;
-    stroke-opacity: .3;
-    stroke-width: 10px;
-    stroke-linecap: round;
-  }
+    div.tooltip p{   
+      /*display: inline-block;*/
+      background-color: null;
+      margin: 0;
+      padding: 0;
+    }
 
-  #slider .axis .halo {
-    fill: none;
-    stroke: #ddd;
-    stroke-width: 8px;
-    stroke-linecap: round;
-  }
+    div.tooltip li{
+      list-style-type: none;
+      text-align: left;
 
-  .slider .handle {
-    fill: #fff;
-    stroke: #000;
-    stroke-opacity: .5;
-    stroke-width: 1.25px;
-    cursor: crosshair;
-  }
-
-  #blocks{
-    width: 800px;
-    display: table;
-  }
-
-  #block1, #block2{
-    display: table-cell;
-    width: 400px;
-    background-color: #f5f5f5;
-
-  }
-
-  #block1{
-    border: 2px solid #fff;
-  }
-
-  .innerblock{
-
-  }
-
-  #innerblock1{
-    border-bottom: 2px solid #fff;
-  }
-
-  .block p, .block div{
+    }
 
 
-  }
+    #slider .axis {
+      font: 10px sans-serif;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    #slider .axis .domain {
+      fill: none;
+      stroke: #000;
+      stroke-opacity: .3;
+      stroke-width: 10px;
+      stroke-linecap: round;
+    }
+
+    #slider .axis .halo {
+      fill: none;
+      stroke: #ddd;
+      stroke-width: 8px;
+      stroke-linecap: round;
+    }
+
+    .slider .handle {
+      fill: #fff;
+      stroke: #000;
+      stroke-opacity: .5;
+      stroke-width: 1.25px;
+      cursor: pointer;
+    }
+
+    #blocks{
+      width: 800px;
+      display: table;
+      margin-top: 10px;
+    }
+
+    #block1, #block2{
+      
+      height: 100px;
+      /*background-color: #f9f9f9;*/
+      padding-left: 15px;
+      padding-bottom: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+    }
 
 
-  #vis .axis path,
-  #vis .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-  }
+    #block1{
+      
+      width: 440px;
+      
+    }
 
 
-  #vis .line {
-    fill: none;
-    stroke: steelblue;
-    stroke-width: 1.5px;
-  }
-
-  rect.rect_tranche_selected{
-    stroke:red;
-    stroke-width:4px;
-
-  }
+    #block2{
+      
+      width: 320px;
+    }
 
 
-#vis .x.axis path
-{
-  opacity:0;
-}
+    #mid_block{
+      display: table-cell;
+      width: 40px;
+    }
+
+    #block1{
+      /*border: 2px solid #fff;*/
+    }
+
+    .innerblock{
+
+    }
+
+    #innerblock1{
+      border-bottom: 2px solid #fff;
+    }
+
+    .block p, .block div{
 
 
-g.tranches_rect g text{
-font-family: tahoma;
-    font-weight: bold;
-    color: #222;
+    }
 
- } 
 
-#revenu_imposable span, #block1 .taxes_before span, #innerblock1 .taxes_before, #innerblock2 .taxes_before
-{
-font-family: tahoma;
-font-weight: bold;
+    #vis .axis path,
+    #vis .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
 
-}
-#block1 .taxes_before, #innerblock1 .taxes_before, #innerblock2 .taxes_before
-{
-padding: 10px;
 
-}
-#bymonth
-{
-    margin-top: 10px;
-    margin-left: 10px;
-  }
+    #vis .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+    }
 
-  
-</style>
-<div>
-  <div id="revenu_imposable"></div>
+    rect.rect_tranche_selected{
+      stroke:#fb00fb;
+      stroke-width:4px;
+
+    }
+
+
+    #vis .x.axis path
+    {
+      opacity:0;
+    }
+
+
+    g.tranches_rect g text{
+      font-family: tahoma;
+      font-weight: bold;
+      color: #222;
+      font-size: 13px;
+    } 
+
+    #revenu_imposable span, #ir_by_year span, #bymonth span, #ir_rate span, #tranche span
+    {
+      font-family: tahoma;
+      font-weight: bold;
+      color:#3F51B5;
+      font-size: 24px;
+    }
+    #block1 .taxes_before, #innerblock1 .taxes_before, #innerblock2 .taxes_before
+    {
+      padding: 10px;
+
+    }
+    #bymonth
+    {
+      margin-top: 10px;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    #ir_by_year #state_refund
+    {
+      font-weight: normal;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    .linked_arc{
+      fill: none;
+      stroke: #FF5511;
+      stroke-width: 1.5px;
+
+    }
+
+
+    g.my_position circle, g.my_position text, marker#arrow{
+      fill:#FF5511;
+      font-family: tahoma;
+
+    }
+
+  </style>
   <div class="block" id="blocks">
     <div class="block" id="block1">
-      <p>Montant de l'impot sur le revenu net</p>
-      <div class="taxes_before"></div>
-      <div class="arrow_between"></div>
-      <div class="taxes_after"></div>
-      <div id ="bymonth">
-        <div class="taxes_before"></div>
-        <div class="arrow_between"></div>
-        <div class="taxes_after"></div>
-      </div>
+      <div id="revenu_imposable"></div>
+      <div id="ir_by_year"></div>
+      <div id ="bymonth"></div>
     </div>
+    <div class="block" id="mid_block"></div>
     <div class="block" id="block2">
-      <div id="innerblock1" class="innerblock block">
-        <p>Taux d'imposition moyen</p>
-        <div class="taxes_before"></div>
-        <div class="arrow_between"></div>
-        <div class="taxes_after"></div>
-      </div>
-      <div id="innerblock2" class="innerblock block">
-        <p>Tranche</p>
-        <div class="taxes_before"></div>
-        <div class="arrow_between"></div>
-        <div class="taxes_after"></div>
-      </div>
+      <div id="ir_rate"></div>
+      <div id="tranche"></div>
     </div>
   </div>
   <div id="vis"></div>
   <div id="slider"></div>
-</div>
